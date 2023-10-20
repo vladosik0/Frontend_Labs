@@ -1,0 +1,50 @@
+table, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td{
+    width: 50px;
+    height: 50px;
+}
+#circle{
+    height: 60px;
+    width: 60px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    left: 35%
+}
+
+#rectangle{
+    width:200px;
+    height: 100px;
+    border: 1px solid grey;
+    position: relative;
+}
+
+div.circle{
+    height: 60px;
+    width: 60px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(115%, 35%);
+}
+
+div.rectangle{
+    width:200px;
+    height: 100px;
+    border: 1px solid grey;
+}
+tr.firstrow{
+    background-color: #998f8f;
+}
+tr.secondrow{
+    background-color: #f5f599;
+}
+tr.firstrow:hover{
+    background-color: #f5f599;
+}
+tr.secondrow:hover{
+    background-color: #998f8f;
+}
