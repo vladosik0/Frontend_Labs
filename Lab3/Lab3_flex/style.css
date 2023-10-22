@@ -1,0 +1,70 @@
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.page {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+header {
+  background-color: aqua;
+  height: 15%;
+  width: 100%;
+}
+
+header1 {
+  background-color: aqua;
+  height: 15%;
+  width: 100%
+}
+
+.content {
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+}
+
+.middlecontent {
+  flex-direction: column;
+  display: flex;
+  flex: 2;
+}
+
+
+imageside {
+  width: 100%;
+  height: 85%;
+  background-color: greenyellow;
+}
+
+textside {
+  height: 85%;
+  width: 100%;
+  background-color: blueviolet;
+}
+
+centralimage {
+  height: 70%;
+  width: 100%;
+  background-color: yellow;
+}
+
+footer1 {
+  height: 15%;
+  width: 100%;
+  background-color:bisque;
+}
+
+footer2 {
+  height: 15%;
+  width: 100%;
+  background-color: bisque;
+}
