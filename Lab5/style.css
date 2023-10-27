@@ -1,0 +1,61 @@
+#PIBInput {
+    border: 1px solid black;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#variantInput {
+    border: 1px solid black;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#groupInput {
+    border: 1px solid black;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#facultyInput {
+    border: 1px solid black;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#dateOfBirthInput {
+    border: 1px solid black;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.validation {
+    display: inline-block;
+}
+
+.results {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+p.resultRow {
+    display: block;
+    margin-bottom: 5px;
+}
+
+tr,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#colorInput, #table {
+    width: 525px;
+}
+
+#cell {
+    background-color: white;
+}
