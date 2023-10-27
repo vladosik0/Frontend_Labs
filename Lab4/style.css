@@ -1,0 +1,39 @@
+#tenthElement {
+    background-color: white;
+    
+}
+
+#tenthElementContent {
+    color: black;
+}
+
+.eleventhElement {
+    background-color: white;
+}
+
+li.eleventhElementContent {
+    color: black;
+}
+
+img.kyivCity {
+    height: 101px;
+    width: 233px;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+#insertedImage {
+    height: 101px;
+    width: 233px;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+#buttonsRow {
+    margin-top: 5%;
+    display: block;
+}
+
+.kyivCityImages{
+    background-color: white;
+}
