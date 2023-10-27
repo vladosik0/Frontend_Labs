@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="keywords" content="Лабораторна робота №1, основи Frontend технологій, HTML"/>
+  <meta name="description" content="Лабораторна робота №1 з дисципліни Основи Frontend технологій"/>
+  <meta charset="UTF-8" />
+  <title>Камчатний В. О. ІС-11</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Завдання 1</h1>
+    <div class = "validation">
+    <h2 style="display: block;">Форма для заповнення</h2>
+    <input id="PIBInput" type="text" placeholder="ПІБ" title="Введіть ПІБ у форматі 'Іванов П.П.'">
+    <input id="variantInput" type="text" placeholder="Варіант" title="Введіть номер варіанту від 1 до 99">
+    <input id="groupInput" type="text" placeholder="Група" title="Введіть шифр групи у форматі 'ІС-11'">
+    <input id="facultyInput" type="text" placeholder="Факультет" title="Введіть назву факультету у форматі 'ФІІТ'">
+    <input id="dateOfBirthInput" type="text" placeholder="Дата народження" title="Введіть дату нароження у числовому форматі 'Число.Місяць.Рік народження'">
+    <button type="button" onclick="validateInput()">Перевірити</button>
+    </div>
+    <div class="results">
+        <h3 style="display: block;">Введені дані</h3>
+        <p class="resultRow">ПІБ:</p>
+        <p class="resultRow">Варіант:</p>
+        <p class="resultRow">Група:</p>
+        <p class="resultRow">Факультет:</p>
+        <p class="resultRow">Дата народження:</p>
+    </div>
+    <h1>Завдання 2</h1>
+    <input id="colorInput" type="color" title="Оберіть колір для клітинки з номером варіанту">
+    <table id="table"></table>
+    <script src="script.js"></script>
+</body>
+</html>
