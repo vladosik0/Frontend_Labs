@@ -36,18 +36,12 @@ function zoomIn() {
     let width = img.offsetWidth
     let height = img.offsetHeight
 
-    console.log(width)
-    console.log(height)
-
     if(width<=350 && height<=167){
         width += 7.76
         height += 4.04
     }
     img.style.width = `${width}px`
     img.style.height = `${height}px`
-    
-    console.log(`${width}px`)
-    console.log(`${height}px`)
 }
 
 function zoomOut() {
@@ -55,18 +49,12 @@ function zoomOut() {
     let width = img.offsetWidth
     let height = img.offsetHeight
 
-    console.log(width)
-    console.log(height)
-
     if(width>=117 && height>=41){
         width -= 7.76
         height -= 4.04
     }
     img.style.width = `${width}px`
     img.style.height = `${height}px`
-    
-    console.log(`${width}px`)
-    console.log(`${height}px`)
 }
 
 function addPhoto() {
