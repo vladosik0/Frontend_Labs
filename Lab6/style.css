@@ -1,0 +1,25 @@
+#outter {
+    width: 10%;
+    margin: 0 auto;
+}
+
+#status {
+    display: flex;
+    flex: 1;
+}
+
+#userRow {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.userClass {
+    display: block;
+    margin-right: 10%;
+}
+
+p, img {
+    display: block;
+}
+
