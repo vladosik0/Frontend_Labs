@@ -1,0 +1,23 @@
+.center {
+  display: flex;
+  justify-content: center;
+
+  > a {
+    margin: 16px;
+  }
+}
+
+.click {
+  background-color: #000;
+  color: #fff;
+}
+
+.tenth-element {
+  background-color: red;
+  color: blue;
+}
+
+.max-width {
+  margin: 0 auto;
+  max-width: 60%;
+}
