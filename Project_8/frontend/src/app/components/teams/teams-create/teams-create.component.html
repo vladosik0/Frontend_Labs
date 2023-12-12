@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Create Team</h1>
+<form #teamForm="ngForm" (ngSubmit)="createTeam(teamForm)">
+  <mat-form-field>
+    <input
+      name="teamName"
+      [(ngModel)]="team.name"
+      #teamName="ngModel"
+      matInput
+      placeholder="Name"
+      required
+    />
+    <mat-error *ngIf="teamName.errors?.['required']"
+      >This field is required.</mat-error
+    >
+  </mat-form-field>
+  <mat-error
+    *ngFor="let validationError of validationBackendErrors"
+    style="margin-bottom: 16px"
+  >
+    {{ validationError }}
+  </mat-error>
+  <div class="buttons">
+    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button color="warn" type="button" (click)="cancel()">
+      Cancel
+    </button>
+  </div>
+</form>

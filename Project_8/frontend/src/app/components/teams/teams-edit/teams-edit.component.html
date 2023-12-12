@@ -1,0 +1,42 @@
+<div *ngIf="loading" class="mat-spinner-wrapper">
+  <mat-spinner></mat-spinner>
+</div>
+<div [hidden]="loading">
+  <h1 mat-dialog-title>Edit Team</h1>
+  <form #teamForm="ngForm" (ngSubmit)="editTeam(teamForm)">
+    <mat-form-field>
+      <input
+        name="teamId"
+        [(ngModel)]="id"
+        #teamId="ngModel"
+        matInput
+        readonly
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        name="teamName"
+        [(ngModel)]="team.name"
+        #teamName="ngModel"
+        matInput
+        placeholder="Name"
+        required
+      />
+      <mat-error *ngIf="teamName.errors?.['required']"
+        >This field is required.</mat-error
+      >
+    </mat-form-field>
+    <mat-error
+      *ngFor="let validationError of validationBackendErrors"
+      style="margin-bottom: 16px"
+    >
+      {{ validationError }}
+    </mat-error>
+    <div class="buttons">
+      <button mat-raised-button color="primary" type="submit">Save</button>
+      <button mat-raised-button color="warn" type="button" (click)="cancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

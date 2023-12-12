@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  <div class="menu">
+    <div
+      mat-menu-item
+      [routerLink]="['/projects']"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      Projects
+    </div>
+    <div
+      mat-menu-item
+      [routerLink]="['/tasks']"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      Tasks
+    </div>
+    <div
+      mat-menu-item
+      [routerLink]="['/teams']"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      Teams
+    </div>
+    <div
+      mat-menu-item
+      [routerLink]="['/users']"
+      routerLinkActive="active"
+      class="menu-item"
+    >
+      Users
+    </div>
+  </div>
+</mat-toolbar>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

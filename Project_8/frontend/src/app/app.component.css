@@ -1,0 +1,19 @@
+.main-content {
+  margin: auto 80px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 16px;
+}
+
+.active {
+  background-color: #0033cb;
+}

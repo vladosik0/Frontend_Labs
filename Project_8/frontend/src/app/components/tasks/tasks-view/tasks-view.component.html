@@ -1,0 +1,74 @@
+<div *ngIf="loading" class="mat-spinner-wrapper">
+  <mat-spinner></mat-spinner>
+</div>
+<div [hidden]="loading">
+  <table mat-table [dataSource]="tasks" matSort matSortDisableClear>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let task">{{ task.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let task">{{ task.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+      <td mat-cell *matCellDef="let task">{{ task.description }}</td>
+    </ng-container>
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>State</th>
+      <td mat-cell *matCellDef="let task" appTask>{{ task.state }}</td>
+    </ng-container>
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Created at</th>
+      <td mat-cell *matCellDef="let task">{{ task.createdAt | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="finishedAt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Finished at</th>
+      <td mat-cell *matCellDef="let task">{{ task.finishedAt | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Edit</th>
+      <td mat-cell *matCellDef="let task" class="text-center">
+        <button
+          mat-icon-button
+          matTooltip="Click to Edit"
+          class="iconbutton"
+          color="primary"
+          [routerLink]="['/tasks', 'edit', task.id]"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Delete</th>
+      <td mat-cell *matCellDef="let task" class="text-center">
+        <button
+          mat-icon-button
+          matTooltip="Click to Delete"
+          class="iconbutton"
+          (click)="delete(task.id)"
+          color="warn"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnNames"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 50, 100]"
+    aria-label="Select page of tasks"
+  ></mat-paginator>
+  <div class="text-center">
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/tasks', 'create']"
+    >
+      Add task
+    </button>
+  </div>
+</div>

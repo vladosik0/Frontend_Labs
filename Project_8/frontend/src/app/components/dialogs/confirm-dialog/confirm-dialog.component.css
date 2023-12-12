@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  width: 60%;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.actions {
+  width: 60%;
+  margin: 24px;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+}
+
+.actions button {
+  width: 100px;
+}

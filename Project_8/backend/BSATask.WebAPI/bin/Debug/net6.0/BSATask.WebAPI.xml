@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BSATask.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.GetProjects">
+            <summary>
+            Get all projects
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.GetProject(System.Int32)">
+            <summary>
+            Get project by id
+            </summary>
+            <param name="id">Project Id</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.CreateProject(BSATask.DAL.Models.Projects.ProjectCreateDto)">
+            <summary>
+            Create new project
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.UpdateProject(BSATask.DAL.Models.Projects.ProjectEditDto,System.Int32)">
+            <summary>
+            Edit project
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.DeleteProject(System.Int32)">
+            <summary>
+            Delete project by id
+            </summary>
+            <param name="id">Project Id</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.GetTasksCountInProjectsByUserId(System.Int32)">
+            <summary>
+            Get the number of tasks in the projects of a specific user by id.
+            </summary>
+            <param name="userId">User Id</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.GetProjectsByTeamSize(System.Int32)">
+            <summary>
+            Get a list of tuples (id, name) from the project collection where the project team contains more than a given number of people.
+            </summary>
+            <param name="teamSize">Number of people in team</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.GetProjectsInfo">
+            <summary>
+            Get ProjectInfoDto(project, project task with longest description, project task with shortest name, total number of users 
+            on team provided project description is greater than 20 characters or number of tasks is less than 3) from project collection.
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.ProjectsController.GetSortedFilteredPageOfProjects(BSATask.DAL.Models.PageDto)">
+            <summary>
+            Get a sorted, filtered page from FullProjectDto 
+            (a list of the tasks of this project, in each task the user responsible for it, the author and the project team)
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.TasksController.GetTasks">
+            <summary>
+            Get all tasks
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.TasksController.GetTask(System.Int32)">
+            <summary>
+            Get task by id
+            </summary>
+            <param name="id">Task Id</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.TasksController.GetRandomTask">
+            <summary>
+            Get random task
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.TasksController.CreateTask(BSATask.DAL.Models.Tasks.TaskCreateDto)">
+            <summary>
+            Create new task
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.TasksController.UpdateTask(BSATask.DAL.Models.Tasks.TaskEditDto,System.Int32)">
+            <summary>
+            Edit task
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.TasksController.DeleteTask(System.Int32)">
+            <summary>
+            Delete task by id
+            </summary>
+            <param name="id">Task Id</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.TasksController.GetCapitalTasksByUserId(System.Int32)">
+            <summary>
+            Get a list of tasks assigned to a specific user by id, where the task name begins with an uppercase letter.
+            </summary>
+            <param name="userId">User Id</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.UsersController.GetUsers">
+            <summary>
+            Get all users
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.UsersController.GetUser(System.Int32)">
+            <summary>
+            Get user by id
+            </summary>
+            <param name="id">User Id</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.UsersController.CreateUser(BSATask.DAL.Models.Users.UserCreateDto)">
+            <summary>
+            Create new user
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.UsersController.UpdateUser(BSATask.DAL.Models.Users.UserEditDto,System.Int32)">
+            <summary>
+            Edit user
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.UsersController.DeleteUser(System.Int32)">
+            <summary>
+            Delete user by id
+            </summary>
+            <param name="id">User Id</param>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.UsersController.GetSortedUsersWithSortedTasks">
+            <summary>
+            Get a list of users alphabetically by firstName in ascending order with tasks sorted by the length of name (in descending order).
+            </summary>
+        </member>
+        <member name="M:BSATask.WebAPI.Controllers.UsersController.GetUserInfo(System.Int32)">
+            <summary>
+            Get UserInfoDto(user, last project created by user, number of tasks under last project, 
+            number of unfinished or canceled tasks under last project, and longest user task) by user id
+            </summary>
+            <param name="userId">User Id</param>
+        </member>
+        <member name="M:BSATeam.WebAPI.Controllers.TeamsController.GetTeams">
+            <summary>
+            Get all teams
+            </summary>
+        </member>
+        <member name="M:BSATeam.WebAPI.Controllers.TeamsController.GetTeam(System.Int32)">
+            <summary>
+            Get team by id
+            </summary>
+            <param name="id">Team id</param>
+        </member>
+        <member name="M:BSATeam.WebAPI.Controllers.TeamsController.CreateTeam(BSATask.DAL.Models.Teams.TeamCreateDto)">
+            <summary>
+            Create new team
+            </summary>
+        </member>
+        <member name="M:BSATeam.WebAPI.Controllers.TeamsController.UpdateTeam(BSATask.DAL.Models.Teams.TeamEditDto,System.Int32)">
+            <summary>
+            Edit team
+            </summary>
+        </member>
+        <member name="M:BSATeam.WebAPI.Controllers.TeamsController.DeleteTeam(System.Int32)">
+            <summary>
+            Delete team by id
+            </summary>
+            <param name="id">Team Id</param>
+        </member>
+        <member name="M:BSATeam.WebAPI.Controllers.TeamsController.GetSortedTeamByMembersWithYear(System.Int32)">
+            <summary>
+            Get a list of teams with users from the collection of teams sorted by name in ascending order
+            all members of which were born before the given year, sorted by the user's registration date in descending order.
+            </summary>
+            <param name="year">The birth year</param>
+        </member>
+    </members>
+</doc>

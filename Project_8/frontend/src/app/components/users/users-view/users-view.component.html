@@ -1,0 +1,74 @@
+<div *ngIf="loading" class="mat-spinner-wrapper">
+  <mat-spinner></mat-spinner>
+</div>
+<div [hidden]="loading">
+  <table mat-table [dataSource]="users" matSort matSortDisableClear>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let user">{{ user.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+      <td mat-cell *matCellDef="let user">{{ user.firstName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+      <td mat-cell *matCellDef="let user">{{ user.lastName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+    </ng-container>
+    <ng-container matColumnDef="registeredAt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Registered at</th>
+      <td mat-cell *matCellDef="let user">{{ user.registeredAt | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="birthDay">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Birthday</th>
+      <td mat-cell *matCellDef="let user">{{ user.birthDay | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Edit</th>
+      <td mat-cell *matCellDef="let user" class="text-center">
+        <button
+          mat-icon-button
+          matTooltip="Click to Edit"
+          class="iconbutton"
+          color="primary"
+          [routerLink]="['/users', 'edit', user.id]"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Delete</th>
+      <td mat-cell *matCellDef="let user" class="text-center">
+        <button
+          mat-icon-button
+          matTooltip="Click to Delete"
+          class="iconbutton"
+          (click)="delete(user.id)"
+          color="warn"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnNames"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 50, 100]"
+    aria-label="Select page of users"
+  ></mat-paginator>
+  <div class="text-center">
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/users', 'create']"
+    >
+      Add user
+    </button>
+  </div>
+</div>

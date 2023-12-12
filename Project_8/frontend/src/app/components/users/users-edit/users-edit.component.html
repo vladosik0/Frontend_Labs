@@ -1,0 +1,97 @@
+<div *ngIf="loading" class="mat-spinner-wrapper">
+  <mat-spinner></mat-spinner>
+</div>
+<div [hidden]="loading">
+  <h1 mat-dialog-title>Edit User</h1>
+  <form #userForm="ngForm" (ngSubmit)="editUser(userForm)">
+    <mat-form-field>
+      <input
+        name="userId"
+        [(ngModel)]="id"
+        #userId="ngModel"
+        matInput
+        readonly
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Team</mat-label>
+      <mat-select name="teamId" [(ngModel)]="teamName">
+        <mat-option
+          *ngFor="let team of teams"
+          [value]="'[' + team.id + ']. ' + team.name"
+        >
+          {{ "[" + team.id + "]. " + team.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        name="userFirstName"
+        [(ngModel)]="user.firstName"
+        #userFirstName="ngModel"
+        matInput
+        placeholder="First Name"
+        required
+      />
+      <mat-error *ngIf="userFirstName.errors?.['required']"
+        >This field is required.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        name="userLastName"
+        [(ngModel)]="user.lastName"
+        #userLastName="ngModel"
+        matInput
+        placeholder="Last Name"
+        required
+      />
+      <mat-error *ngIf="userLastName.errors?.['required']"
+        >This field is required.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        name="userEmail"
+        type="email"
+        [(ngModel)]="user.email"
+        #userEmail="ngModel"
+        matInput
+        placeholder="Email"
+        required
+        email
+      />
+      <mat-error *ngIf="userEmail.errors?.['required']"
+        >This field is required.</mat-error
+      >
+      <mat-error *ngIf="userEmail.errors?.['email']"
+        >This is not email</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date for birthday</mat-label>
+      <input
+        name="userBirthDay"
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="user.birthDay"
+        min="1920-01-01"
+        max="2007-01-01"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-error
+      *ngFor="let validationError of validationBackendErrors"
+      style="margin-bottom: 16px"
+    >
+      {{ validationError }}
+    </mat-error>
+    <div class="buttons">
+      <button mat-raised-button color="primary" type="submit">Save</button>
+      <button mat-raised-button color="warn" type="button" (click)="cancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 24px;
+}
+
+form {
+  width: 400px;
+  margin: 32px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons button[type="submit"] {
+  margin-right: 20px;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.mat-spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  margin-bottom: 8px;
+}
